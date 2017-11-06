@@ -34,11 +34,9 @@ int main(int argc, char** argv) {
 
     straightforward_nonblocked_ijk_algorithm(n, a, b, result);
     printf("\n----------------------------------------------\n");
-    for (n = 100; n <= 800; n = n + 50) {
-        for (j = 50; j <= n; j = j + 50) {
-            blas_blocked_ijk_algorithm(n, j, a, b, result);
+    for (j = 50; j <= n; j = j + 50) {
+        blas_blocked_ijk_algorithm(n, j, a, b, result);
 
-        }
     }
     printf("\n----------------------------------------------\n");
     for (j = 50; j <= n; j = j + 50) {
@@ -54,6 +52,7 @@ int main(int argc, char** argv) {
     return (EXIT_SUCCESS);
 }
 
+
 void straightforward_nonblocked_ijk_algorithm(int n, double* a, double* b, double* result) {
     gettimeofday(&tv1, &tz);
     int i, j, k;
@@ -68,7 +67,7 @@ void straightforward_nonblocked_ijk_algorithm(int n, double* a, double* b, doubl
     }
     gettimeofday(&tv2, &tz);
     double elapsed = (double) (tv2.tv_sec - tv1.tv_sec) + (double) (tv2.tv_usec - tv1.tv_usec) * 1.e-6;
-    printf("Benchmark of straightforward non-blocked %d * %d matrix ijk algorithm - %f\n", n, n, elapsed);
+    printf("Benchmark of straightforward non-blocked ijk algorithm - %f\n", elapsed);
 }
 
 void blas_blocked_ijk_algorithm(int n, int cacheBlock, double* a, double* b,
@@ -92,7 +91,7 @@ void blas_blocked_ijk_algorithm(int n, int cacheBlock, double* a, double* b,
     }
     gettimeofday(&tv2, &tz);
     double elapsed = (double) (tv2.tv_sec - tv1.tv_sec) + (double) (tv2.tv_usec - tv1.tv_usec) * 1.e-6;
-    printf("Benchmark of BLAS Blocked %d * %d matrix ijk algorithm using block size %d - %f\n", n, n, cacheBlock, elapsed);
+    printf("Benchmark of BLAS Blocked ijk algorithm using block size %d - %f\n", cacheBlock, elapsed);
 }
 
 void blas_blocked_kij_algorithm(int n, int cacheBlock, double* a, double* b,
@@ -117,7 +116,7 @@ void blas_blocked_kij_algorithm(int n, int cacheBlock, double* a, double* b,
     }
     gettimeofday(&tv2, &tz);
     double elapsed = (double) (tv2.tv_sec - tv1.tv_sec) + (double) (tv2.tv_usec - tv1.tv_usec) * 1.e-6;
-    printf("Benchmark of BLAS Blocked kij %d * %d matrix algorithm using block size %d - %f\n", n, n, cacheBlock, elapsed);
+    printf("Benchmark of BLAS Blocked kij algorithm using block size %d - %f\n", cacheBlock, elapsed);
 
 }
 
@@ -143,7 +142,7 @@ void blas_nonblocked_kij_algorithm(int n, double* a, double* b,
     }
     gettimeofday(&tv2, &tz);
     double elapsed = (double) (tv2.tv_sec - tv1.tv_sec) + (double) (tv2.tv_usec - tv1.tv_usec) * 1.e-6;
-    printf("Benchmark of BLAS nonBlocked %d * %d matrix kij algorithm  - %f\n", n, n, elapsed);
+    printf("Benchmark of BLAS nonBlocked kij algorithm  - %f\n", elapsed);
 
 }
 

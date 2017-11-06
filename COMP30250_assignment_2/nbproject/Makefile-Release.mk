@@ -35,7 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/blas_blocked_ijk_algorithm.o \
+	${OBJECTDIR}/blas_blocked_kij_algorithm.o \
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/straightforward_nonblocked_ijk.o
 
 
 # C Compiler Flags
@@ -64,10 +67,25 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libcomp30250_assignment_2.a: ${OBJECT
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libcomp30250_assignment_2.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libcomp30250_assignment_2.a
 
+${OBJECTDIR}/blas_blocked_ijk_algorithm.o: blas_blocked_ijk_algorithm.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/blas_blocked_ijk_algorithm.o blas_blocked_ijk_algorithm.c
+
+${OBJECTDIR}/blas_blocked_kij_algorithm.o: blas_blocked_kij_algorithm.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/blas_blocked_kij_algorithm.o blas_blocked_kij_algorithm.c
+
 ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+
+${OBJECTDIR}/straightforward_nonblocked_ijk.o: straightforward_nonblocked_ijk.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/straightforward_nonblocked_ijk.o straightforward_nonblocked_ijk.c
 
 # Subprojects
 .build-subprojects:

@@ -12,7 +12,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>blas_blocked_ijk_algorithm.c</itemPath>
+      <itemPath>blas_blocked_kij_algorithm.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>straightforward_nonblocked_ijk.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -38,15 +41,22 @@
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="blas_blocked_ijk_algorithm.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="blas_blocked_kij_algorithm.c" ex="false" tool="0" flavor2="0">
+      </item>
       <folder path="TestFiles">
         <linkerTool>
           <linkerDynSerch>
+            <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
           </linkerDynSerch>
         </linkerTool>
       </folder>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="straightforward_nonblocked_ijk.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="3">
@@ -71,15 +81,22 @@
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="blas_blocked_ijk_algorithm.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="blas_blocked_kij_algorithm.c" ex="false" tool="0" flavor2="0">
+      </item>
       <folder path="TestFiles">
         <linkerTool>
           <linkerDynSerch>
+            <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
           </linkerDynSerch>
         </linkerTool>
       </folder>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="straightforward_nonblocked_ijk.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
   </confs>
