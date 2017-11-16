@@ -50,3 +50,5 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/COMP30250_assignment_2/build/
+/COMP30250_assignment_2/dist/
